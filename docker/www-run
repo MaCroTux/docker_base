@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+SUBDIR=$1
+
+if [ -z SUBDIR ]
+then
+    SUBDIR=''
+fi
+
+docker run                                                                                                             \
+    --rm                                                                                                               \
+    -d                                                                                                                 \
+    -p 80:80                                                                                                           \
+    --name www                                                                                                         \
+    -v ${PWD}/$SUBDIR:/var/www/html                                                                                            \
+    -w /data                                                                                                           \
+    php:7.2-apache

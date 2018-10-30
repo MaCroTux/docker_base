@@ -1,0 +1,3 @@
+#!/bin/sh
+
+docker/composer create-project slim/slim-skeleton
